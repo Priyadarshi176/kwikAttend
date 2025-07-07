@@ -1,41 +1,29 @@
 import { StatCard } from "@/components/shared/stat-card";
-import { Users, BookCopy, BarChart3, CalendarCheck } from "lucide-react";
-import { students, subjects, faculty } from "@/lib/data";
-import { AttendanceMarker } from "@/components/faculty/attendance-marker";
+import { Users, BookCopy } from "lucide-react";
+import { ManageStudentsTable } from "@/components/faculty/manage-students-table";
 
 export default function FacultyDashboard() {
-  const today = new Date().toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
-
   return (
     <>
-      <div className="grid gap-4 md:grid-cols-2 md:gap-8 lg:grid-cols-4">
+      <div className="grid gap-4 md:grid-cols-2 md:gap-8 lg:grid-cols-3">
         <StatCard 
           title="Total Students"
-          value={students.length.toString()}
-          description="Number of active students"
+          value="1,320"
           Icon={Users}
         />
         <StatCard 
-          title="Total Faculties"
-          value={faculty.length.toString()}
-          description="Number of teaching staff"
+          title="Total Faculty"
+          value="50"
           Icon={Users}
         />
         <StatCard 
-          title="Total Subjects"
-          value={subjects.length.toString()}
-          description="Across all departments"
+          title="Total Classes"
+          value="12"
           Icon={BookCopy}
-        />
-        <StatCard 
-          title="Today's Attendance"
-          value="Pending"
-          description={today}
-          Icon={CalendarCheck}
         />
       </div>
       <div>
-        <AttendanceMarker />
+        <ManageStudentsTable />
       </div>
     </>
   );

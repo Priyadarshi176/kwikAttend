@@ -84,16 +84,16 @@ export function AttendanceMarker() {
       <CardHeader>
         <CardTitle>Mark Attendance</CardTitle>
         <CardDescription>
-          Select a subject and date to mark student attendance.
+          Select a class and date to mark student attendance.
         </CardDescription>
       </CardHeader>
       <CardContent className="space-y-4">
         <div className="grid md:grid-cols-2 gap-4">
           <div className="grid gap-2">
-            <Label>Subject</Label>
+            <Label>Class</Label>
             <Select value={selectedSubject} onValueChange={setSelectedSubject}>
               <SelectTrigger>
-                <SelectValue placeholder="Select a subject" />
+                <SelectValue placeholder="Select a class" />
               </SelectTrigger>
               <SelectContent>
                 {subjects.map((subject) => (
@@ -140,7 +140,6 @@ export function AttendanceMarker() {
           <Table>
             <TableHeader>
               <TableRow>
-                <TableHead>Roll No.</TableHead>
                 <TableHead>Student Name</TableHead>
                 <TableHead className="text-center">Status</TableHead>
                 <TableHead>Remarks</TableHead>
@@ -149,7 +148,6 @@ export function AttendanceMarker() {
             <TableBody>
               {students.map((student) => (
                 <TableRow key={student.id}>
-                  <TableCell>{student.rollNumber}</TableCell>
                   <TableCell className="font-medium">{student.name}</TableCell>
                   <TableCell>
                     <RadioGroup

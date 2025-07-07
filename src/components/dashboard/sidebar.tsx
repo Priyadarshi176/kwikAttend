@@ -18,7 +18,7 @@ const facultyNavItems = [
   { href: "/dashboard/attendance", icon: CalendarCheck, label: "Mark Attendance" },
   { href: "/dashboard/reports", icon: BarChart3, label: "Reports" },
   { href: "/dashboard/students", icon: Users, label: "Manage Students" },
-  { href: "/dashboard/subjects", icon: BookCopy, label: "Manage Subjects" },
+  { href: "/dashboard/subjects", icon: BookCopy, label: "Manage Classes" },
 ];
 
 const studentNavItems = [

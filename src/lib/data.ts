@@ -2,6 +2,9 @@ export type Student = {
   id: string;
   name: string;
   rollNumber: string;
+  email: string;
+  class: string;
+  status: "Present" | "Absent";
 };
 
 export type Subject = {
@@ -24,12 +27,12 @@ export type AttendanceRecord = {
 };
 
 export const students: Student[] = [
-  { id: "s1", name: "Alice Johnson", rollNumber: "STU001" },
-  { id: "s2", name: "Bob Williams", rollNumber: "STU002" },
-  { id: "s3", name: "Charlie Brown", rollNumber: "STU003" },
-  { id: "s4", name: "Diana Miller", rollNumber: "STU004" },
-  { id: "s5", name: "Ethan Davis", rollNumber: "STU005" },
-  { id: "s6", name: "Fiona Garcia", rollNumber: "STU006" },
+  { id: "s1", name: "Smith Johnson", rollNumber: "STU001", email: "smith.j@example.com", class: "Class A", status: "Present" },
+  { id: "s2", name: "Emma Williams", rollNumber: "STU002", email: "emma.w@example.com", class: "Class B", status: "Absent" },
+  { id: "s3", name: "Olivia Brown", rollNumber: "STU003", email: "olivia.b@example.com", class: "Class A", status: "Present" },
+  { id: "s4", name: "Bob Williams", rollNumber: "STU004", email: "bob@example.com", class: "Class B", status: "Present" },
+  { id: "s5", name: "Diana Miller", rollNumber: "STU005", email: "diana@example.com", class: "Class C", status: "Absent" },
+  { id: "s6", name: "Fiona Garcia", rollNumber: "STU006", email: "fiona@example.com", class: "Class C", status: "Present" },
 ];
 
 export const faculty: Faculty[] = [
@@ -45,7 +48,7 @@ export const subjects: Subject[] = [
 ];
 
 export const attendanceData: AttendanceRecord[] = [
-  // Alice Johnson's attendance
+  // Alice Johnson's (now Smith Johnson) attendance
   { studentId: "s1", subjectId: "sub1", date: "2024-07-01", status: "Present" },
   { studentId: "s1", subjectId: "sub1", date: "2024-07-02", status: "Present" },
   { studentId: "s1", subjectId: "sub1", date: "2024-07-03", status: "Absent", remarks: "Fever" },
@@ -56,9 +59,9 @@ export const attendanceData: AttendanceRecord[] = [
   { studentId: "s1", subjectId: "sub2", date: "2024-07-03", status: "Absent" },
   { studentId: "s1", subjectId: "sub2", date: "2024-07-05", status: "Present" },
   { studentId: "s1", subjectId: "sub3", date: "2024-07-02", status: "Present" },
-  { studentId: "s1", subjectId: "sub3", date: "2024-07-04", status: "Present" },
+  { studentId: "s1", subjectId: "sub3", date: "2024-07-04", status: "Leave" },
 
-  // Bob Williams' attendance
+  // Emma Williams' attendance
   { studentId: "s2", subjectId: "sub1", date: "2024-07-01", status: "Absent" },
   { studentId: "s2", subjectId: "sub1", date: "2024-07-02", status: "Absent" },
   { studentId: "s2", subjectId: "sub1", date: "2024-07-03", status: "Absent" },
